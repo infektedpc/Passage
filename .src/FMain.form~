@@ -1,0 +1,159 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,115,68)
+  Text = ("Passage")
+  Icon = Picture["passage128x.png"]
+  { File_ Menu
+    Text = ("File")
+  }
+  { Edit_ Menu
+    Text = ("Edit")
+  }
+  { View_ Menu
+    Text = ("View")
+  }
+  { Text_ Menu
+    Text = ("Text")
+  }
+  { Document_ Menu
+    Text = ("Document")
+  }
+  { Navigation_ Menu
+    Text = ("Navigation")
+  }
+  { Help_ Menu
+    Text = ("Help")
+  }
+  { Panel1 Panel
+    MoveScaled(0,0,115,5)
+    { Button1 Button
+      MoveScaled(15,0,5,5)
+      Picture = Picture["icon:/22/save"]
+      Border = False
+    }
+    { Button2 Button
+      MoveScaled(20,0,5,5)
+      Picture = Picture["icon:/22/save-as"]
+      Border = False
+    }
+    { Button3 Button
+      MoveScaled(25,0,5,5)
+      Picture = Picture["icon:/22/undo"]
+      Border = False
+    }
+    { Button4 Button
+      MoveScaled(30,0,5,5)
+      Picture = Picture["icon:/22/redo"]
+      Border = False
+    }
+    { Button5 Button
+      MoveScaled(0,0,5,5)
+      Picture = Picture["icon:/22/new"]
+      Border = False
+    }
+    { Button6 Button
+      MoveScaled(5,0,5,5)
+      Picture = Picture["icon:/22/new-window"]
+      Border = False
+    }
+    { Button7 Button
+      MoveScaled(10,0,5,5)
+      Picture = Picture["icon:/22/open"]
+      Border = False
+    }
+    { Button8 Button
+      MoveScaled(35,0,5,5)
+      Picture = Picture["icon:/22/cut"]
+      Border = False
+    }
+    { Button9 Button
+      MoveScaled(40,0,5,5)
+      Picture = Picture["icon:/22/copy"]
+      Border = False
+    }
+    { Button10 Button
+      MoveScaled(45,0,5,5)
+      Picture = Picture["icon:/22/paste"]
+      Border = False
+    }
+    { Button11 Button
+      MoveScaled(50,0,5,5)
+      Picture = Picture["icon:/22/font"]
+      Border = False
+    }
+    { Button12 Button
+      MoveScaled(55,0,5,5)
+      Picture = Picture["icon:/22/indent"]
+      Border = False
+    }
+    { Button13 Button
+      MoveScaled(60,0,5,5)
+      Picture = Picture["icon:/22/unindent"]
+      Border = False
+    }
+    { Button14 Button
+      MoveScaled(65,0,5,5)
+      Picture = Picture["icon:/22/text"]
+      Border = False
+    }
+    { Button15 Button
+      MoveScaled(70,0,5,5)
+      Picture = Picture["icon:/22/text-center"]
+      Border = False
+    }
+    { Button16 Button
+      MoveScaled(75,0,5,5)
+      Picture = Picture["icon:/22/text-fill"]
+      Border = False
+    }
+    { Button17 Button
+      MoveScaled(80,0,5,5)
+      Picture = Picture["icon:/22/text-left"]
+      Border = False
+    }
+    { Button18 Button
+      MoveScaled(85,0,5,5)
+      Picture = Picture["icon:/22/text-right"]
+      Border = False
+    }
+    { Button19 Button
+      MoveScaled(90,0,5,5)
+      Picture = Picture["icon:/22/text-bold"]
+      Border = False
+    }
+    { Button20 Button
+      MoveScaled(95,0,5,5)
+      Picture = Picture["icon:/22/text-italic"]
+      Border = False
+    }
+    { Button21 Button
+      MoveScaled(100,0,5,5)
+      Picture = Picture["icon:/22/text-underline"]
+      Border = False
+    }
+    { Button22 Button
+      MoveScaled(105,0,5,5)
+      Picture = Picture["icon:/22/text-strike"]
+      Border = False
+    }
+    { Button23 Button
+      MoveScaled(110,0,5,5)
+      Picture = Picture["icon:/22/volume"]
+      Border = False
+    }
+  }
+  { TabStrip1 TabStrip
+    MoveScaled(0,5,115,58)
+    Count = 2
+    Index = 0
+    Text = ("Untitled1")
+    { TextArea1 TextArea
+      MoveScaled(0,0,115,53)
+    }
+    Index = 1
+    Text = ("New")
+    Picture = Picture["icon:/22/add"]
+    Index = 0
+  }
+}
