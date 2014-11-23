@@ -1,9 +1,192 @@
 ' Gambas class file
 
-Public Sub _new()
+Public Sub Form_Open()
+   Me.Center
+  
+  TextEdit1.SetFocus
+  TextEdit1_Cursor
+End
+
+Public Sub TextEdit1_Cursor()
+
+  'Object.Lock(Button_Bold)
+  'Object.Lock(Button_Italic)
+  'Object.Lock(Button_Under)
+  'Object.Lock(Button_Strike)
+  'Object.Lock(Button_AlignLeft)
+  'Object.Lock(Button_AlignCenter)
+  'Object.Lock(Button_AlignRight)
+  'Object.Lock(Button_AlignJustify)
+
+  'Object.Lock(ColorButton1)
+  'Object.Lock(ColorButton2)
+
+  Button_Bold.Value = TextEdit1.Format.Font.Bold
+  Button_Italic.Value = TextEdit1.Format.Font.Italic
+  Button_Under.Value = TextEdit1.Format.Font.Underline
+  Button_Strike.Value = TextEdit1.Format.Font.StrikeOut
+
+  Select Case TextEdit1.Format.Alignment
+    Case Align.Left
+      Button_AlignLeft.Value = True
+    Case Align.Right
+      Button_AlignRight.Value = True
+    Case Align.Center
+      Button_AlignCenter.Value = True
+    Case Align.Justify
+      Button_AlignJustify.Value = True
+    Case Align.Normal
+      Button_AlignLeft.Value = True
+  End Select
+
+  'ColorButton1.Color = TextEdit1.Format.Color
+  'ColorButton2.Color = TextEdit1.Format.Background
+
+  'Object.UnLock(Button_Bold)
+  'Object.UnLock(Button_Italic)
+  'Object.UnLock(Button_Under)
+  'Object.UnLock(Button_Strike)
+  'Object.UnLock(Button_AlignLeft)
+  'Object.UnLock(Button_AlignCenter)
+  'Object.UnLock(Button_AlignRight)
+  'Object.UnLock(Button_AlignJustify)
+
+  'Object.unLock(ColorButton1)
+  'Object.unLock(ColorButton2)
 
 End
 
-Public Sub Form_Open()
+Public Sub Button_Bold_Click()
+
+  TextEdit1.Format.Font.Bold = Last.Value
+
+End
+
+Public Sub Button_Italic_Click()
+
+  TextEdit1.Format.Font.Italic = Last.Value
+
+End
+
+Public Sub Button_under_Click()
+
+  TextEdit1.Format.Font.Underline = Last.Value
+
+End
+
+Public Sub Button_Strike_Click()
+
+  TextEdit1.Format.Font.StrikeOut = Last.Value
+
+End
+
+Public Sub Button_Font_Click()
+
+  Dialog.Font = TextEdit1.Font
+  If Dialog.SelectFont() Then Return
+  TextEdit1.Font = Dialog.Font
+
+End
+
+
+Public Sub Button_AlignJustify_Click()
+
+   TextEdit1.Format.Alignment = Align.Justify
+
+End
+
+
+
+Public Sub Button_AlignCenter_Click()
+
+    TextEdit1.Format.Alignment = Align.Center
+
+End
+
+
+
+Public Sub Button_AlignLeft_Click()
+
+  TextEdit1.Format.Alignment = Align.Left
+
+End
+
+
+
+Public Sub Button_AlignRight_Click()
+
+  TextEdit1.Format.Alignment = Align.Right
+
+End
+
+Public Sub Button_Undo_Click()
+
+  TextEdit1.Undo
+
+End
+
+Public Sub Button_Redo_Click()
+
+  TextEdit1.Redo
+
+End
+
+Public Sub Button_Save_Click()
+Dialog.Filter = ["*.txt", "Text Files"]
+  If Dialog.SaveFile() Then Return
+  File.Save(Dialog.Path, TextEdit1.Text)
+Catch
+  Message.Info("error")
+
+End
+
+Public Sub Button_SaveAs_Click()
+
+Dialog.Filter = ["*.txt", "Text Files"]
+  If Dialog.SaveFile() Then Return
+  File.Save(Dialog.Path, TextEdit1.Text)
+Catch
+  Message.Info("error")
+  
+
+End
+
+Public Sub Button_open_Click()
+
+Dialog.Title = "Choose a file"
+Dialog.Filter = ["*.txt", "Text Files", "*", "All files"]
+Dialog.Path = "."
+If Dialog.OpenFile() Then
+  Return ' User pressed Cancel -
+Endif
+
+End
+
+Public Sub Button_Cut_Click()
+
+  TextEdit1.Cut
+
+End
+
+Public Sub Button_Copy_Click()
+
+  TextEdit1.Copy
+
+End
+
+Public Sub Button_Paste_Click()
+
+  TextEdit1.Paste
+
+End
+
+Public Sub Button_new_Click()
+
+  If Not TextEdit1.Text = "" Then
+ Dialog.SaveFile() 
+  File.Save(Dialog.Path, TextEdit1.Text)
+Catch
+  Message.Info("error")
+  Endif
 
 End
